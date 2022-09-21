@@ -1,5 +1,9 @@
+import streamlit as st
+
+
 def is_even(number):
     return number % 2 == 0
+
 
 def get_even_letters(message):
     even_letters = []
@@ -8,12 +12,14 @@ def get_even_letters(message):
             even_letters.append(message[counter])
     return even_letters
 
+
 def get_odd_letters(message):
     odd_letters = []
     for counter in range(0, len(message)):
         if not is_even(counter):
             odd_letters.append(message[counter])
     return odd_letters
+
 
 def swap_letters(message):
     letter_list = []
@@ -27,7 +33,7 @@ def swap_letters(message):
     new_message = ''.join(letter_list)
     return new_message
 
-import streamlit as st
+
 st.title("End-to-End Encryption")
 user = st.text_input("Enter a Message")
 st.write(swap_letters(user))
